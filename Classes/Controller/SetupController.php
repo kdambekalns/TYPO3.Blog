@@ -52,49 +52,20 @@ class SetupController extends \F3\FLOW3\MVC\Controller\ActionController {
 	public function indexAction() {
 		$this->blogRepository->removeAll();
 
-		$blogCount = $postCount = $commentCount = 0;
-		$startTime = microtime(TRUE);
-		foreach (range(1, rand(1, 5)) as $b) {
-			$blogCount++;
-			$blog = $this->objectFactory->create('F3\Blog\Domain\Model\Blog');
-			$blog->setIdentifier('blog' . $b);
-			$blog->setTitle(ucwords(\F3\Faker\Lorem::sentence(3)));
-			$blog->setDescription(\F3\Faker\Lorem::sentence());
-			$this->blogRepository->add($blog);
+		$blog = $this->objectFactory->create('F3\Blog\Domain\Model\Blog');
+		$blog->setIdentifier('myblog');
+		$blog->setTitle('My Blog');
+		$blog->setDescription('A blog about Foo, Bar and Baz.');
+		$this->blogRepository->add($blog);
 
-			$tags = array();
-			foreach (range(0, rand(3, 5)) as $i) {
-				$tags[] = $this->objectFactory->create('F3\Blog\Domain\Model\Tag', \F3\Faker\Lorem::words(1));
-			}
+		$post = $this->objectFactory->create('F3\Blog\Domain\Model\Post');
+		$post->setAuthor('John Doe');
+		$post->setTitle('Example Post');
+		$post->setContent('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.');
 
-			foreach (range(1, rand(15, 25)) as $i) {
-				$postCount++;
-				$post = $this->objectFactory->create('F3\Blog\Domain\Model\Post');
-				$post->setAuthor(\F3\Faker\Name::fullName());
-				$post->setTitle(trim(\F3\Faker\Lorem::sentence(2), '.'));
-				$post->setContent(implode(chr(10),\F3\Faker\Lorem::paragraphs(5)));
-				for ($j = 0; $j < rand(0, 5); $j++) {
-					$post->addTag($tags[array_rand($tags)]);
-				}
-				$post->setDate(\F3\Faker\Date::random('- 500 days', '+0 seconds'));
-				for ($j = 0; $j < rand(0, 10); $j++) {
-					$commentCount++;
-					$comment = $this->objectFactory->create('F3\Blog\Domain\Model\Comment');
-					$comment->setAuthor(\F3\Faker\Name::fullName());
-					$comment->setEmailAddress(\F3\Faker\Internet::email());
-					$comment->setContent(implode(chr(10),\F3\Faker\Lorem::paragraphs(2)));
-					$comment->setDate(\F3\Faker\Date::random('+ 10 minutes', '+ 6 weeks', $post->getDate()));
-					$post->addComment($comment);
-				}
+		$blog->addPost($post);
 
-				$blog->addPost($post);
-			}
-		}
-		$endTime = microtime(TRUE);
-
-		return '<p>Done, created ' . $blogCount . ' blogs, ' . $postCount . ' posts, ' . $commentCount . ' comments.</p>' .
-		'<p>Peak memory usage was ~' . floor(memory_get_peak_usage()/1024/1024) . ' MByte.<br />' .
-		'Data generation took ' . round(($endTime - $startTime), 4) . ' seconds.</p>';
+		return 'Successfully created a blog';
 	}
 
 }

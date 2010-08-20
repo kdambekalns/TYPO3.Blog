@@ -9,9 +9,9 @@
   name: 'Comment actions 1'
   uriPattern:    'blogs/{blog}/posts/{post}/comments/{@action}'
   defaults:
-    @package:    Blog
-    @controller: Comment
-    @format:     html
+    '@package':    Blog
+    '@controller': Comment
+    '@format':     html
   routeParts:
     blog:
       handler: F3\Blog\RoutePartHandlers\BlogRoutePartHandler
@@ -20,10 +20,10 @@
   name: 'Post'
   uriPattern:    'blogs/{blog}/{post}.{@format}'
   defaults:
-    @package:    Blog
-    @controller: Post
-    @action:     show
-    @format:     html
+    '@package':    Blog
+    '@controller': Post
+    '@action':     show
+    '@format':     html
   routeParts:
     blog:
       handler: F3\Blog\RoutePartHandlers\BlogRoutePartHandler
@@ -34,10 +34,10 @@
   name: 'Posts'
   uriPattern:    'blogs/{blog}/posts.{@format}'
   defaults:
-    @package:    Blog
-    @controller: Post
-    @action:     index
-    @format:     html
+    '@package':    Blog
+    '@controller': Post
+    '@action':     index
+    '@format':     html
   routeParts:
     blog:
       handler: F3\Blog\RoutePartHandlers\BlogRoutePartHandler
@@ -46,9 +46,9 @@
   name: 'Post actions 2'
   uriPattern:    'blogs/{blog}/posts/{post}/{@action}'
   defaults:
-    @package:    Blog
-    @controller: Post
-    @format:     html
+    '@package':    Blog
+    '@controller': Post
+    '@format':     html
   routeParts:
     blog:
       handler: F3\Blog\RoutePartHandlers\BlogRoutePartHandler
@@ -59,9 +59,9 @@
   name: 'Post actions 1'
   uriPattern:    'blogs/{blog}/posts/{@action}'
   defaults:
-    @package:    Blog
-    @controller: Post
-    @format:     html
+    '@package':    Blog
+    '@controller': Post
+    '@format':     html
   routeParts:
     blog:
       handler: F3\Blog\RoutePartHandlers\BlogRoutePartHandler
@@ -70,9 +70,9 @@
   name: 'Blog actions 2'
   uriPattern: 'blogs/{blog}/{@action}'
   defaults:
-    @package:    Blog
-    @controller: Blog
-    @format:     html
+    '@package':    Blog
+    '@controller': Blog
+    '@format':     html
   routeParts:
     blog:
       handler: F3\Blog\RoutePartHandlers\BlogRoutePartHandler
@@ -81,22 +81,22 @@
   name: 'Blog actions 1'
   uriPattern: 'blogs/{@action}'
   defaults:
-    @package:    Blog
-    @controller: Blog
-    @format:     html
+    '@package':    Blog
+    '@controller': Blog
+    '@format':     html
 
 --
   name: 'Blogs'
   uriPattern: '(blogs.html)'
   defaults:
-    @package:    Blog
-    @controller: Blog
-    @action:     index
-    @format:     html
+    '@package':    Blog
+    '@controller': Blog
+    '@action':     Index
+    '@format':     html
 
 --
   name: 'Setup'
   uriPattern: 'setup'
   defaults:
-    @package:    Blog
-    @controller: Setup
+    '@package':    Blog
+    '@controller': Setup
