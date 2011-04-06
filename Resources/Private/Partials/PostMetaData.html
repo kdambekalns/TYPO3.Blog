@@ -1,19 +1,14 @@
 <p class="metadata">
-	Published on <f:format.date format='d.m.Y'>{post.date}</f:format.date> by {post.author}
+	<f:translate arguments="{0: post.date, 1:post.author}"><![CDATA[Published on {0,datetime} by {1}]]></f:translate>
 	<f:link.action action="show" controller="Post" arguments="{post: post}" section="comments"><img src="../../Public/Icons/FamFamFam/comments.png" title="Comments"/>
-		<f:if condition="{post.numberOfComments} > 0">
-			<f:then>
-				<f:if condition="{post.numberOfComments} == 1">
-					<f:then>{post.numberOfComments} comment</f:then>
-					<f:else>{post.numberOfComments} comments</f:else>
-				</f:if>
-			</f:then>
-			<f:else>No comments</f:else>
-		</f:if>
+		<f:translate arguments="{0: post.numberOfComments}" quantity="{post.numberOfComments}"><![CDATA[{0,number} comments]]></f:translate>
 	</f:link.action>
 	<br />
-	<f:if condition="{post.category}">Filed under: <f:link.action action="index" controller="Post" arguments="{category: post.category}" format="html">{post.category}</f:link.action></f:if>
+	<f:if condition="{post.category}"><f:translate>Filed under:</f:translate> <f:link.action action="index" controller="Post" arguments="{category: post.category}" format="html">{post.category.name}</f:link.action></f:if>
 	<f:if condition="{post.tags}">
-		| Tags: <f:for each="{post.tags}" as="tag"><f:link.action action="index" controller="Post" arguments="{tag: tag}" >{tag.name}</f:link.action> </f:for>
+		| <f:translate>Tags:</f:translate>
+		<f:for each="{post.tags}" as="tag">
+			<f:link.action action="index" controller="Post" arguments="{tag: tag}" >{tag.name}</f:link.action>
+		</f:for>
 	</f:if>
 </p>
