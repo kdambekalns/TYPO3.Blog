@@ -88,7 +88,7 @@ class SetupCommandController extends \TYPO3\FLOW3\MVC\Controller\CommandControll
 		$account = $this->accountFactory->createAccountWithPassword($identifier, $password, array('Editor'));
 		$this->accountRepository->add($account);
 
-		$personName = new \TYPO3\Party\Domain\Model\PersonName('', $firstName, $lastName);
+		$personName = new \TYPO3\Party\Domain\Model\PersonName('', $firstName, '', $lastName);
 		$person = new \TYPO3\Party\Domain\Model\Person();
 		$person->setName($personName);
 		$person->addAccount($account);
@@ -162,7 +162,7 @@ class SetupCommandController extends \TYPO3\FLOW3\MVC\Controller\CommandControll
 				$comment->setContent(implode(chr(10),\TYPO3\Faker\Lorem::paragraphs(2)));
 				$comment->setDate(\TYPO3\Faker\Date::random('+ 10 minutes', '+ 6 weeks', $post->getDate()));
 				$post->addComment($comment);
-				$commentCount ++;
+				$commentCount++;
 			}
 			$this->postRepository->add($post);
 			$blog->addPost($post);
