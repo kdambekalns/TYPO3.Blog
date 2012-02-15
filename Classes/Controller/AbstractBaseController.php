@@ -28,7 +28,7 @@ use TYPO3\FLOW3\Annotations as FLOW3;
  * the Blog package.
  *
  */
-abstract class AbstractBaseController extends \TYPO3\FLOW3\MVC\Controller\ActionController {
+abstract class AbstractBaseController extends \TYPO3\FLOW3\Mvc\Controller\ActionController {
 
 	/**
 	 * @FLOW3\Inject
@@ -50,10 +50,10 @@ abstract class AbstractBaseController extends \TYPO3\FLOW3\MVC\Controller\Action
 	/**
 	 * Initializes the view before invoking an action method.
 	 *
-	 * @param \TYPO3\FLOW3\MVC\View\ViewInterface $view The view to be initialized
+	 * @param \TYPO3\FLOW3\Mvc\View\ViewInterface $view The view to be initialized
 	 * @return void
 	 */
-	protected function initializeView(\TYPO3\FLOW3\MVC\View\ViewInterface $view) {
+	protected function initializeView(\TYPO3\FLOW3\Mvc\View\ViewInterface $view) {
 		$this->blog = $this->blogRepository->findActive();
 		if ($this->blog === NULL) {
 			$this->redirect('index', 'Setup');

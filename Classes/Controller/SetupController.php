@@ -28,7 +28,7 @@ use TYPO3\FLOW3\Annotations as FLOW3;
  * data to play with.
  *
  */
-class SetupController extends \TYPO3\FLOW3\MVC\Controller\ActionController {
+class SetupController extends \TYPO3\FLOW3\Mvc\Controller\ActionController {
 
 	/**
 	 * @FLOW3\Inject

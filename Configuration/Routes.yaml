@@ -55,17 +55,16 @@
       objectType: TYPO3\Blog\Domain\Model\Tag
       uriPattern: '{name}'
 
-
-# Note: Pagination needs some special care due to the way widgets currently build URIs
 -
   name: 'Posts Pagination'
-  uriPattern:    'posts/page/{@widget_0.currentPage}'
+
+  uriPattern:    'posts/page/{--typo3-fluid-viewhelpers-widget-paginateviewhelper.currentPage}'
   defaults:
     '@controller': 'Post'
     '@action':     'index'
-    '@widget_0':
-      '@controller':  ''
-      '@package':     ''
+    '--typo3-fluid-viewhelpers-widget-paginateviewhelper':
+      '@package':    ''
+      '@controller': ''
 
 -
   name: 'Posts Pagination - First page'
@@ -73,9 +72,6 @@
   defaults:
     '@controller': 'Post'
     '@action':     'index'
-    '@widget_0':
-      '@controller':  ''
-      '@package':     ''
 
 -
   name: 'General Posts Actions'
