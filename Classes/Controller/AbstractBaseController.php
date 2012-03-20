@@ -52,7 +52,6 @@ abstract class AbstractBaseController extends \TYPO3\FLOW3\MVC\Controller\Action
 	 *
 	 * @param \TYPO3\FLOW3\MVC\View\ViewInterface $view The view to be initialized
 	 * @return void
-	 * @author Robert Lemke <robert@typo3.org>
 	 */
 	protected function initializeView(\TYPO3\FLOW3\MVC\View\ViewInterface $view) {
 		$this->blog = $this->blogRepository->findActive();

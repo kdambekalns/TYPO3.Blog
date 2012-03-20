@@ -50,7 +50,6 @@ class Image {
 	 *
 	 * @param string $title
 	 * @return void
-	 * @author Robert Lemke <robert@typo3.org>
 	 */
 	public function setTitle($title) {
 		$this->title = $title;
@@ -60,7 +59,6 @@ class Image {
 	 * Gets the title
 	 *
 	 * @return string The title
-	 * @author Robert Lemke <robert@typo3.org>
 	 */
 	public function getTitle() {
 		return $this->title;

@@ -17,8 +17,8 @@
 
 	<f:render partial="FormErrors" arguments="{for: 'newCategory'}" />
 	<f:form method="post" action="create" object="{newCategory}" name="newCategory">
-		<label><f:translate key="category.name"/></label><br />
-		<f:form.textbox property="name" /><br />
+		<label><f:translate id="category.name"/></label><br />
+		<f:form.textfield property="name" /><br />
 		<f:form.submit value="{f:translate(value: 'Add category')}"/>
 	</f:form>
 

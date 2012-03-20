@@ -49,7 +49,7 @@ class AccountController extends \TYPO3\Blog\Controller\AbstractBaseController {
 
 	/**
 	 * @FLOW3\Inject
-	 * @var TYPO3\FLOW3\Security\Context
+	 * @var \TYPO3\FLOW3\Security\Context
 	 */
 	protected $securityContext;
 
@@ -96,7 +96,7 @@ class AccountController extends \TYPO3\Blog\Controller\AbstractBaseController {
 	/**
 	 * Updates the account properties
 	 *
-	 * @param TYPO3\FLOW3\Security\Account $account
+	 * @param \TYPO3\FLOW3\Security\Account $account
 	 * @param string $password
 	 * @return void
 	 */

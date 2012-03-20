@@ -5,8 +5,8 @@
 	<f:flashMessages class="flashmessages"/>
 	<f:render partial="FormErrors" arguments="{for: 'category'}" />
 	<f:form action="update" object="{category}" name="category">
-		<label><f:translate key="category.name"/></label><br />
-		<f:form.textbox property="name" /><br />
+		<label><f:translate id="category.name"/></label><br />
+		<f:form.textfield property="name" /><br />
 		<f:form.submit value="{f:translate(value: 'Update', package: 'TYPO3.FLOW3')}"/>
 	</f:form>
 </f:section>

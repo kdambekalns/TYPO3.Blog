@@ -9,15 +9,15 @@
 				<legend></legend>
 				<div class="row username">
 					<label id="usernameLabel" for="username" class="placeholder"><span><f:translate package="TYPO3.FLOW3">Username</f:translate></span></label>
-					<f:form.textbox name="__authentication[TYPO3][FLOW3][Security][Authentication][Token][UsernamePassword][username]" tabindex="1" />
+					<f:form.textfield name="__authentication[TYPO3][FLOW3][Security][Authentication][Token][UsernamePassword][username]" tabindex="1" />
 				</div>
 
 				<div class="row password">
-					<label id="passwordLabel" for="password" class="placeholder"><span><f:translate package="TYPO3.FLOW3" key="authentication.password"/></span></label>
+					<label id="passwordLabel" for="password" class="placeholder"><span><f:translate package="TYPO3.FLOW3" id="authentication.password"/></span></label>
 					<f:form.password  name="__authentication[TYPO3][FLOW3][Security][Authentication][Token][UsernamePassword][password]" tabindex="2" />
 				</div>
 
-				<f:form.submit value="{f:translate(key: 'authentication.login', package: 'TYPO3.FLOW3')}" />
+				<f:form.submit value="{f:translate(id: 'authentication.login', package: 'TYPO3.FLOW3')}" />
 			</fieldset>
 		</f:form>
 	</div>

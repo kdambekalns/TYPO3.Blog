@@ -175,7 +175,7 @@ class PostController extends \TYPO3\Blog\Controller\AbstractBaseController {
 	/**
 	 * Override getErrorFlashMessage to present nice flash error messages.
 	 *
-	 * @return string
+	 * @return \TYPO3\FLOW3\Error\Message
 	 */
 	protected function getErrorFlashMessage() {
 		switch ($this->actionMethodName) {
@@ -198,6 +198,7 @@ class PostController extends \TYPO3\Blog\Controller\AbstractBaseController {
 				return $token->getAccount();
 			}
 		}
+		return NULL;
 	}
 }
 ?>

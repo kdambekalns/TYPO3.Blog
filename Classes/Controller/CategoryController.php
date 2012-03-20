@@ -31,13 +31,13 @@ class CategoryController extends \TYPO3\Blog\Controller\AbstractBaseController {
 
 	/**
 	 * @FLOW3\Inject
-	 * @var TYPO3\Blog\Domain\Repository\CategoryRepository
+	 * @var \TYPO3\Blog\Domain\Repository\CategoryRepository
 	 */
 	protected $categoryRepository;
 
 	/**
 	 * @FLOW3\Inject
-	 * @var TYPO3\Blog\Domain\Repository\PostRepository
+	 * @var \TYPO3\Blog\Domain\Repository\PostRepository
 	 */
 	protected $postRepository;
 
@@ -104,7 +104,7 @@ class CategoryController extends \TYPO3\Blog\Controller\AbstractBaseController {
 	/**
 	 * Override getErrorFlashMessage to present nice flash error messages.
 	 *
-	 * @return string
+	 * @return \TYPO3\FLOW3\Error\Message
 	 */
 	protected function getErrorFlashMessage() {
 		switch ($this->actionMethodName) {

@@ -51,7 +51,7 @@ class LoginController extends \TYPO3\Blog\Controller\AbstractBaseController {
 	 * to the login screen.
 	 *
 	 * @return void
-	 * @author Robert Lemke <robert@typo3.org>
+	 * @throws \TYPO3\FLOW3\Security\Exception\AuthenticationRequiredException
 	 */
 	public function authenticateAction() {
 		try {
@@ -66,7 +66,6 @@ class LoginController extends \TYPO3\Blog\Controller\AbstractBaseController {
 	/**
 	 *
 	 * @return void
-	 * @author Andreas Förthner <andreas.foerthner@netlogix.de>
 	 */
 	public function logoutAction() {
 		$this->authenticationManager->logout();

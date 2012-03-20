@@ -33,7 +33,6 @@ class AdminController extends \TYPO3\Blog\Controller\AbstractBaseController {
 	 * Displays an administration overview.
 	 *
 	 * @return void
-	 * @author Robert Lemke <robert@typo3.org>
 	 * @FLOW3\SkipCsrfProtection
 	 */
 	public function indexAction() {

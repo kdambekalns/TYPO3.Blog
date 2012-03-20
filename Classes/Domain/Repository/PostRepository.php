@@ -22,10 +22,12 @@ namespace TYPO3\Blog\Domain\Repository;
  *                                                                        */
 
 use \TYPO3\FLOW3\Persistence\QueryInterface;
+use TYPO3\FLOW3\Annotations as FLOW3;
 
 /**
  * A repository for Blog Posts
  *
+ * @FLOW3\Scope("singleton")
  */
 class PostRepository extends \TYPO3\FLOW3\Persistence\Repository {
 
@@ -33,8 +35,7 @@ class PostRepository extends \TYPO3\FLOW3\Persistence\Repository {
 	 * Finds posts by the specified blog
 	 *
 	 * @param \TYPO3\Blog\Domain\Model\Blog $blog The blog the post must refer to
-	 * @param integer $limit The number of posts to return at max
-	 * @return \TYPO3\FLOW3\Persistence\QueryResultProxy The posts
+	 * @return \TYPO3\FLOW3\Persistence\QueryResultInterface The posts
 	 */
 	public function findByBlog(\TYPO3\Blog\Domain\Model\Blog $blog) {
 		$query = $this->createQuery();
@@ -48,7 +49,7 @@ class PostRepository extends \TYPO3\FLOW3\Persistence\Repository {
 	 *
 	 * @param \TYPO3\Blog\Domain\Model\Tag $tag
 	 * @param \TYPO3\Blog\Domain\Model\Blog $blog The blog the post must refer to
-	 * @return \TYPO3\FLOW3\Persistence\QueryResultProxy The posts
+	 * @return \TYPO3\FLOW3\Persistence\QueryResultInterface The posts
 	 */
 	public function findByTagAndBlog(\TYPO3\Blog\Domain\Model\Tag $tag, \TYPO3\Blog\Domain\Model\Blog $blog) {
 		$query = $this->createQuery();
@@ -67,7 +68,7 @@ class PostRepository extends \TYPO3\FLOW3\Persistence\Repository {
 	 *
 	 * @param \TYPO3\Blog\Domain\Model\Category $category
 	 * @param \TYPO3\Blog\Domain\Model\Blog $blog The blog the post must refer to
-	 * @return \TYPO3\FLOW3\Persistence\QueryResultProxy The posts
+	 * @return \TYPO3\FLOW3\Persistence\QueryResultInterface The posts
 	 */
 	public function findByCategoryAndBlog(\TYPO3\Blog\Domain\Model\Category $category, \TYPO3\Blog\Domain\Model\Blog $blog) {
 		$query = $this->createQuery();
@@ -114,7 +115,7 @@ class PostRepository extends \TYPO3\FLOW3\Persistence\Repository {
 	 *
 	 * @param \TYPO3\Blog\Domain\Model\Blog $blog The blog the post must refer to
 	 * @param integer $limit The number of posts to return at max
-	 * @return \TYPO3\FLOW3\Persistence\QueryResultProxy The posts
+	 * @return \TYPO3\FLOW3\Persistence\QueryResultInterface The posts
 	 */
 	public function findRecentByBlog(\TYPO3\Blog\Domain\Model\Blog $blog, $limit = 5) {
 		$query = $this->createQuery();

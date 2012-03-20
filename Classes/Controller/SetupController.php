@@ -62,7 +62,7 @@ class SetupController extends \TYPO3\FLOW3\MVC\Controller\ActionController {
 
 	/**
 	 * @FLOW3\Inject
-	 * @var TYPO3\FLOW3\Security\Context
+	 * @var \TYPO3\FLOW3\Security\Context
 	 */
 	protected $securityContext;
 

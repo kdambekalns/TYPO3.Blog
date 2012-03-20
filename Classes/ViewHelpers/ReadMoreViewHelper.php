@@ -32,7 +32,6 @@ class ReadMoreViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractViewHelper
 	 * Render the read more text
 	 *
 	 * @return string cropped text
-	 * @author Robert Lemke <robert@typo3.org>
 	 */
 	public function render() {
 		$stringToTruncate = $this->renderChildren();

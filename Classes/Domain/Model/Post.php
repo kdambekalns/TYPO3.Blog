@@ -167,7 +167,7 @@ class Post {
 	/**
 	 * Getter for image
 	 *
-	 * @return TYPO3\Blog\Domain\Model\Image
+	 * @return \TYPO3\Blog\Domain\Model\Image
 	 */
 	public function getImage() {
 		return $this->image;
@@ -176,7 +176,7 @@ class Post {
 	/**
 	 * Setter for image
 	 *
-	 * @param TYPO3\Blog\Domain\Model\Image $image
+	 * @param \TYPO3\Blog\Domain\Model\Image $image
 	 */
 	public function setImage(\TYPO3\Blog\Domain\Model\Image $image = NULL) {
 			// work around property mapper delivering an empty Image
@@ -313,7 +313,7 @@ class Post {
 	/**
 	 * Getter for category
 	 *
-	 * @return TYPO3\Blog\Domain\Model\Category
+	 * @return \TYPO3\Blog\Domain\Model\Category
 	 */
 	public function getCategory() {
 		return $this->category;
@@ -322,7 +322,8 @@ class Post {
 	/**
 	 * Setter for category
 	 *
-	 * @param TYPO3\Blog\Domain\Model\Category $category
+	 * @param \TYPO3\Blog\Domain\Model\Category $category
+	 * @return void
 	 */
 	public function setCategory(\TYPO3\Blog\Domain\Model\Category $category) {
 		$this->category = $category;
