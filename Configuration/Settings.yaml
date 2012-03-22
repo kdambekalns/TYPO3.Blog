@@ -9,10 +9,10 @@ TYPO3:
         authenticationStrategy: oneToken
         providers:
           DefaultProvider:
-            providerClass: PersistedUsernamePasswordProvider
-            entryPoint:
-              WebRedirect:
-                uri: admin/authentication
+            provider: 'PersistedUsernamePasswordProvider'
+            entryPoint: 'WebRedirect'
+            entryPointOptions:
+              uri: 'admin/authentication'
 
   Blog:
     notifications:
