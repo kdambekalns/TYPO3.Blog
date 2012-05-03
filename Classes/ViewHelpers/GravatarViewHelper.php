@@ -61,7 +61,7 @@ class GravatarViewHelper extends \TYPO3\Fluid\Core\ViewHelper\AbstractTagBasedVi
 	 * @return string The rendered link
 	 */
 	public function render() {
-		$baseUri = $this->controllerContext->getRequest()->getBaseUri();
+		$baseUri = $this->controllerContext->getRequest()->getHttpRequest()->getBaseUri();
 		$gravatarUri = 'http://www.gravatar.com/avatar/' . md5((string)$this->arguments['email']);
 		$uriParts = array();
 		if ($this->arguments['default']) {
