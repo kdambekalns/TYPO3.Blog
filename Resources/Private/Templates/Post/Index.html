@@ -17,7 +17,7 @@
 					<div class="clear"></div>
 				</div>
 			</f:security.ifHasRole>
-			<f:widget.paginate configuration="{itemsPerPage:5, maximumNumberOfLinks: 5}" objects="{posts}" as="paginatedPosts">
+			<f:widget.paginate widgetId="paginate" configuration="{itemsPerPage:5, maximumNumberOfLinks: 5}" objects="{posts}" as="paginatedPosts">
 				<ol class="posts">
 					<f:for each="{paginatedPosts}" as="post">
 						<li class="post">

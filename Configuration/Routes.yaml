@@ -59,11 +59,11 @@
 # Note: Pagination needs some special care due to the way widgets currently build URIs
 -
   name: 'Posts Pagination'
-  uriPattern:    'posts/page/{@widget_0.currentPage}'
+  uriPattern:    'posts/page/{--paginate.currentPage}'
   defaults:
     '@controller': 'Post'
     '@action':     'index'
-    '@widget_0':
+    '--paginate':
       '@controller':  ''
       '@package':     ''
 
@@ -73,9 +73,6 @@
   defaults:
     '@controller': 'Post'
     '@action':     'index'
-    '@widget_0':
-      '@controller':  ''
-      '@package':     ''
 
 -
   name: 'General Posts Actions'
